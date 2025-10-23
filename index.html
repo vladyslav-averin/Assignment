@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>VIA Connect - Create Account</title>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Join VIA Connect</h1>
+            <p class="subtitle">Let's create your student profile</p>
+        </header>
+
+        <!-- Full name -->
+        <div class="form-group">
+            <label for="fullname">Full name</label>
+            <input 
+                type="text" 
+                id="fullname" 
+                name="fullname"
+                placeholder="e. g. John Doe"
+                autocomplete="name"
+            >
+        </div>
+
+        <!-- VIA Email -->
+        <div class="form-group">
+            <label for="email">VIA Email</label>
+            <input 
+                type="email" 
+                id="email" 
+                name="email"
+                placeholder="e. g. 363116@via.dk"
+                autocomplete="email"
+            >
+        </div>
+
+        <!-- Phone Number -->
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input 
+                type="tel" 
+                id="phone" 
+                name="phone"
+                placeholder="+45 53 68 41 21"
+                autocomplete="tel"
+            >
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input 
+                type="password" 
+                id="password" 
+                name="password"
+                placeholder="Enter your password"
+                autocomplete="new-password"
+            >
+            <span class="hint">At least 8 characters, 1 uppercase, 1 lowercase, 1 number.</span>
+        </div>
+
+        <!-- Confirm password -->
+        <div class="form-group">
+            <label for="confirm">Confirm password</label>
+            <input 
+                type="password" 
+                id="confirm" 
+                name="confirm-password"
+                placeholder="Re-enter your password"
+                autocomplete="new-password"
+            >
+        </div>
+    </div>
+</body>
+</html>
