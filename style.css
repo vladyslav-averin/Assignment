@@ -273,6 +273,7 @@ input[type="file"] {
     font-family: inherit;
     color: #000;
     cursor: pointer;
+    pointer-events: none; 
 }
 
 input[type="file"]:focus {
@@ -290,6 +291,7 @@ input[type="file"]::file-selector-button {
     font-weight: 400;
     color: #000;
     cursor: pointer;
+    pointer-events: auto;
 }
 
 /* Terms checkbox */
