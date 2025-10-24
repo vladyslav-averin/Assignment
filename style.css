@@ -204,13 +204,14 @@ select:focus {
 .range-container {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: .875rem;
     margin-top: 0.5rem;
 }
 
 .range-label {
     color: #000;
     white-space: nowrap;
+    font-size: .875rem;
 }
 
 input[type="range"] {
@@ -218,7 +219,7 @@ input[type="range"] {
     height: 0.25rem;
     -webkit-appearance: none;
     appearance: none;
-    background: linear-gradient(to right, #000 0%, #000 40%, #d0d0d0 40%, #d0d0d0 100%);
+    background: #d0d0d0; /* просто серый */
     border-radius: 0.125rem;
     outline: none;
     cursor: pointer;
