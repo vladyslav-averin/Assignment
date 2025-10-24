@@ -57,13 +57,13 @@ input[type="tel"],
 input[type="password"] {
     width: 100%;
     min-height: 2.5rem; /* 40px */
-    padding: 0.625rem 1rem; /* 10px 16px */
+    padding: 0.625rem 0.875rem;
     border: 1px solid #d0d0d0;
     border-radius: 6px;
     font-size: 1rem;
     font-family: inherit;
     color: #555;
-    background: #FDFDFD;
+    background: #f9f9f9;
     transition: all 0.2s ease;
     -webkit-appearance: none;
     appearance: none;
@@ -94,8 +94,9 @@ input[type="date"] {
     padding: 0.625rem 1rem;
     border: 1px solid #d0d0d0;
     border-radius: 0.5rem;
+    font-size: 1rem;
     font-family: inherit;
-    color: #999;
+    color: #c0c0c0;
     background: #f9f9f9;
     transition: all 0.2s ease;
     -webkit-appearance: none;
@@ -116,7 +117,7 @@ select {
     border-radius: 0.5rem;
     font-size: 1rem;
     font-family: inherit;
-    color: #000;
+    color: #c0c0c0;
     background: #f9f9f9;
     background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M1 1.5L6 6.5L11 1.5" stroke="%23999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/%3E%3C/svg%3E');
     background-repeat: no-repeat;
@@ -317,8 +318,8 @@ input[type="file"]::file-selector-button {
 }
 
 .terms-link {
-    color: #000;
-    text-decoration: underline;
+    color: #999;
+ 
 }
 
 /* Submit button */
