@@ -5,36 +5,41 @@
 }
 
 html {
-    font-size: 16px; /* Base size: 1rem = 16px */
+    font-size: 16px; /* Base: 1rem = 16px */
 }
 
+/* Mobile: белый fullscreen */
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    background-color: #ececec;
-    padding: 1.5rem 1rem; /* 24px 16px */
+    background-color: white;
+    padding: 0;
     color: #000;
     line-height: 1.5;
     min-height: 100vh;
 }
 
+/* Mobile: fullscreen контейнер без скругления */
 .container {
     max-width: 100%;
     margin: 0 auto;
     background: white;
-    padding: 2rem 1.25rem; /* 32px 20px */
-    border-radius: 1.25rem; /* 20px */
+    padding: 1.5rem 1.25rem;
+    border-radius: 0;
 }
 
+/* ============================================
+   HEADER
+   ============================================ */
 header {
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 h1 {
-    font-size: 1.2rem; /* 28px */
+    font-size: 1.5rem; /* 24px */
     font-weight: 700;
     color: #000;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.5rem;
     letter-spacing: -0.03em;
 }
 
@@ -44,27 +49,33 @@ h1 {
     font-weight: 400;
 }
 
+/* ============================================
+   FORM GROUPS
+   ============================================ */
 .form-group {
-    margin-bottom: 1rem; /* 28px */
+    margin-bottom: 1.25rem;
 }
 
 label {
     display: block;
-    font-size: 0.9rem; /* 16px */
+    font-size: 0.875rem; /* 14px */
     color: #000;
-    margin-bottom: 0.3rem; /* 10px */
-    font-weight: 300;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
 }
 
+/* ============================================
+   TEXT INPUTS (Mobile: 40px = 2.5rem)
+   ============================================ */
 input[type="text"],
 input[type="email"],
 input[type="tel"],
 input[type="password"] {
     width: 100%;
-    min-height: 1.1rem; /* 56px */
-    padding: 0.5rem 0.8rem; /* 16px 20px */
+    min-height: 2.5rem; /* 40px */
+    padding: 0.625rem 1rem; /* 10px 16px */
     border: 1px solid #d0d0d0;
-    border-radius: 5px;
+    border-radius: 0.5rem; /* 8px */
     font-size: 1rem; /* 16px - prevents iOS zoom */
     font-family: inherit;
     color: #000;
@@ -90,53 +101,114 @@ input:focus {
     box-shadow: 0 0 0 1px #000;
 }
 
+/* ============================================
+   HINT TEXT
+   ============================================ */
 .hint {
     display: block;
-    font-size: 0.8rem; /* 14px */
+    font-size: 0.8rem;
     color: #999;
-    margin-top: 0.5rem; /* 8px */
+    margin-top: 0.5rem;
     line-height: 1.4;
 }
 
+/* ============================================
+   TABLET - 768px (48em)
+   ============================================ */
 @media (min-width: 48em) {
+    /* Серый фон + padding */
     body {
-        padding: 3rem 2rem; /* 48px 32px */
+        background-color: #ececec;
+        padding: 3rem 2rem;
     }
 
+    /* Карточка с скруглением и тенью */
     .container {
-        max-width: 30rem; /* 600px */
-        padding: 3rem 2.5rem; /* 48px 40px */
+        max-width: 37.5rem; /* 600px */
+        padding: 3rem 2.5rem;
+        border-radius: 1.25rem; /* 20px */
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    header {
+        margin-bottom: 2.5rem;
     }
 
     h1 {
-        font-size: 1.25rem; /* 36px */
+        font-size: 1.75rem; /* 28px */
+        margin-bottom: 0.5rem;
     }
 
     .subtitle {
-        font-size: 1rem; /* 18px */
+        font-size: 1.0625rem; /* 17px */
     }
 
     .form-group {
-        margin-bottom: 1rem; /* 32px */
+        margin-bottom: 1.5rem;
     }
 
     label {
-        font-size: 1rem; /* 17px */
-        margin-bottom: 0.5rem; /* 12px */
+        font-size: 0.875rem; /* 14px */
+        margin-bottom: 0.5rem;
     }
 
     input[type="text"],
     input[type="email"],
     input[type="tel"],
     input[type="password"] {
-        min-height: 1rem; /* 60px */
-        padding: .6rem 1rem; /* 18px 24px */
-        font-size: 1rem; /* 17px */
-        border-radius: 5px; /* 14px */
+        min-height: 2.5rem; /* 40px */
+        padding: 0.625rem 1rem;
+        font-size: 1rem;
+        border-radius: 0.5rem;
     }
 
     .hint {
-        font-size: 0.9rem; /* 15px */
-        margin-top: 0.6rem; /* 10px */
+        font-size: 0.8rem;
+        margin-top: 0.5rem;
+    }
+}
+
+/* ============================================
+   DESKTOP - 1024px (64em)
+   ============================================ */
+@media (min-width: 64em) {
+    body {
+        padding: 4rem 2.5rem;
+    }
+
+    .container {
+        max-width: 37.5rem;
+        padding: 3.5rem 3rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    header {
+        margin-bottom: 3rem;
+    }
+
+    h1 {
+        font-size: 2rem; /* 32px */
+    }
+
+    .subtitle {
+        font-size: 1.125rem; /* 18px */
+    }
+
+    .form-group {
+        margin-bottom: 1.75rem;
+    }
+
+    label {
+        font-size: 0.9375rem; /* 15px */
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="password"] {
+        min-height: 2.75rem; /* 44px - чуть больше на десктопе */
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        border-radius: 0.625rem; /* 10px */
     }
 }
