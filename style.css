@@ -18,7 +18,7 @@ body {
     max-width: 100%;
     margin: 0 auto;
     background: white;
-    padding: 1.5rem 2rem;
+    padding: 1.5rem 3rem;
     border-radius: 0;
 }
 
@@ -248,6 +248,7 @@ textarea {
     padding: 0.75rem 1rem;
     border: 1px solid #d0d0d0;
     border-radius: 0.5rem;
+    font-size: 1rem;
     font-family: inherit;
     color: #555;
     background: #f9f9f9;
@@ -326,6 +327,7 @@ input[type="file"]::file-selector-button {
     color: white;
     border: none;
     border-radius: 0.625rem;
+    font-size: 1rem;
     font-weight: 400;
     font-family: inherit;
     cursor: pointer;
@@ -342,7 +344,6 @@ input[type="file"]::file-selector-button {
 }
 
 @media (min-width: 48em) {
-    /* Серый фон + padding */
     body {
         background-color: #ececec;
         padding: 2rem 2rem;
