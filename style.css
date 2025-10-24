@@ -59,7 +59,8 @@ input[type="password"] {
     min-height: 2.5rem; /* 40px */
     padding: 0.625rem 1rem; /* 10px 16px */
     border: 1px solid #d0d0d0;
-    border-radius: 6px; /* 8px */
+    border-radius: 6px;
+    font-size: 1rem;
     font-family: inherit;
     color: #555;
     background: #f9f9f9;
