@@ -74,6 +74,117 @@
                 autocomplete="new-password"
             >
         </div>
+
+        <!-- Date of Birth -->
+        <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input 
+                type="date" 
+                id="dob" 
+                name="dob"
+            >
+        </div>
+
+        <!-- Study Program -->
+        <div class="form-group">
+            <label for="program">Study Program</label>
+            <select id="program" name="program">
+                <option value="" selected>Select</option>
+                <option value="software-engineering">Software Technology Engineering</option>
+                <option value="design">Graphic Storytelling</option>
+                <option value="marketing">Character Animation</option>
+            </select>
+        </div>
+
+        <!-- Campus Location -->
+        <div class="form-group">
+            <label class="group-label">Campus Location</label>
+            <div class="radio-group">
+                <label class="radio-label">
+                    <input type="radio" name="campus" value="horsens" checked>
+                    <span>Horsens</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="campus" value="other">
+                    <span>Other</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- Activity Interests -->
+        <div class="form-group">
+            <label class="group-label">Activity Interests <span class="optional">(select all that apply)</span></label>
+            <div class="checkbox-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" name="interests" value="sports">
+                    <span>Sports</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="interests" value="travel">
+                    <span>Travel</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="interests" value="music">
+                    <span>Music</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="interests" value="other">
+                    <span>Other</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- How social are you? -->
+        <div class="form-group">
+            <label for="sociability">How social are you?</label>
+            <div class="range-container">
+                <span class="range-label">Introvert</span>
+                <input 
+                    type="range" 
+                    id="sociability" 
+                    name="sociability"
+                    min="1" 
+                    max="10" 
+                    value="5"
+                >
+                <span class="range-label">Extrovert</span>
+            </div>
+        </div>
+
+        <!-- Short Bio -->
+        <div class="form-group">
+            <label for="bio">Short Bio <span class="optional">(optional)</span></label>
+            <textarea 
+                id="bio" 
+                name="bio"
+                placeholder="Tell us about yourself..."
+                maxlength="300"
+            ></textarea>
+            <span class="hint">Maximum 300 characters</span>
+        </div>
+
+        <!-- Upload photo -->
+        <div class="form-group">
+            <label for="photo">Upload photo <span class="optional">(optional)</span></label>
+            <input 
+                type="file" 
+                id="photo" 
+                name="photo"
+                accept="image/jpeg,image/png,image/heic"
+            >
+            <span class="hint">JPG, PNG, HEIC (max 5 mb)</span>
+        </div>
+
+        <!-- Terms & Conditions -->
+        <div class="form-group">
+            <label class="checkbox-label terms-checkbox">
+                <input type="checkbox" id="terms" name="terms">
+                <span>I agree to the <a href="#" class="terms-link">Terms & Conditions</a></span>
+            </label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn">Create Account</button>
     </div>
 </body>
 </html>
