@@ -102,16 +102,19 @@ input[type="date"] {
     border-radius: 0.5rem;
     font-size: 1rem;
     font-family: inherit;
-    color: var(--color-muted);
-    background: var(--color-input-bg);
+    color: var(--color-primary);
+    background: none; /* убирает кастомный фон, чтобы iOS не блокировал нативный picker */
     transition: all 0.2s ease;
+    appearance: auto;
+    -webkit-appearance: auto;
 }
 
 input[type="date"]:focus {
     outline: none;
     border-color: var(--color-muted);
-    background: var(--color-white);
+    background: none;
 }
+
 
 select {
     width: auto;
