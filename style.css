@@ -73,6 +73,7 @@ input[type="password"] {
     color: var(--color-text-secondary);
     background: var(--color-input-bg);
     transition: all 0.2s ease;
+
 }
 
 input::placeholder {
@@ -102,19 +103,18 @@ input[type="date"] {
     border-radius: 0.5rem;
     font-size: 1rem;
     font-family: inherit;
-    color: var(--color-primary);
-    background: none; /* убирает кастомный фон, чтобы iOS не блокировал нативный picker */
+    color: var(--color-muted);
+    background: var(--color-input-bg);
     transition: all 0.2s ease;
-    appearance: auto;
-    -webkit-appearance: auto;
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 input[type="date"]:focus {
     outline: none;
     border-color: var(--color-muted);
-    background: none;
+    background: var(--color-white);
 }
-
 
 select {
     width: auto;
