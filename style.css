@@ -18,7 +18,7 @@ body {
     max-width: 100%;
     margin: 0 auto;
     background: white;
-    padding: 1.5rem 3rem;
+    padding: 1.5rem 2rem;
     border-radius: 0;
 }
 
@@ -203,7 +203,7 @@ select:focus {
 /* Range slider */
 .range-container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: .875rem;
     margin-top: 0.5rem;
 }
@@ -211,37 +211,48 @@ select:focus {
 .range-label {
     color: #000;
     white-space: nowrap;
+    padding-top: 0.3125rem; /* выравнивание с центром слайдера */
+}
+
+.range-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
 input[type="range"] {
-    flex: 1;
+    width: 100%;
     height: 0.25rem;
     -webkit-appearance: none;
     appearance: none;
-    background: #d0d0d0; /* просто серый */
+    background: #d0d0d0;
     border-radius: 0.125rem;
     outline: none;
     cursor: pointer;
+    margin-top: 0.4375rem; /* центрирование слайдера относительно текста */
+    accent-color: #000;
 }
 
-input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 1.125rem;
-    height: 1.125rem;
-    border-radius: 50%;
-    background: #000;
-    cursor: pointer;
+.range-values {
+    display: flex;
+    position: relative;
+    margin-top: 0.5rem;
+    height: 1rem;
 }
 
-input[type="range"]::-moz-range-thumb {
-    width: 1.125rem;
-    height: 1.125rem;
-    border-radius: 50%;
-    background: #000;
-    cursor: pointer;
-    border: none;
+.range-values span {
+    position: absolute;
+    font-size: 0.75rem;
+    color: #999;
+    transform: translateX(-50%);
 }
+
+.range-values span:nth-child(1) { left: 0%; }
+.range-values span:nth-child(2) { left: 26%; }
+.range-values span:nth-child(3) { left: 50%; }
+.range-values span:nth-child(4) { left: 74%; }
+.range-values span:nth-child(5) { left: 100%; }
 
 /* Textarea */
 textarea {
@@ -319,7 +330,7 @@ input[type="file"]::file-selector-button {
 
 .terms-link {
     color: #999;
- 
+    text-decoration: none;
 }
 
 /* Submit button */
