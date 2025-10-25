@@ -101,22 +101,29 @@
         </div>
 
         <!-- Campus Location -->
-        <div class="form-group">
+        <div class="form-group campus-group">
             <label class="group-label">Campus Location</label>
             <div class="radio-group">
                 <label class="radio-label">
-                    <input type="radio" name="campus" value="horsens" checked>
+                    <input type="radio" name="campus" value="horsens" id="campus-horsens" checked>
                     <span>Horsens</span>
                 </label>
                 <label class="radio-label">
-                    <input type="radio" name="campus" value="other">
+                    <input type="radio" name="campus" value="aarhus" id="campus-aarhus">
                     <span>Aarhus</span>
                 </label>
                 <label class="radio-label">
-                    <input type="radio" name="campus" value="other">
+                    <input type="radio" name="campus" value="other" id="campus-other">
                     <span>Other</span>
                 </label>
             </div>
+            <input 
+                type="text" 
+                id="other-campus" 
+                name="other-campus"
+                class="other-campus-input"
+                placeholder="Enter your campus location"
+            >
         </div>
 
         <!-- Activity Interests -->
