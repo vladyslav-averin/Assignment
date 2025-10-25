@@ -111,6 +111,7 @@ input[type="date"] {
     background-position: right 0.75rem center;
     background-size: 15px 15px;
     transition: all 0.2s ease;
+    text-align: left;
     -webkit-appearance: none;
     appearance: none;
 }
