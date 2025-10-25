@@ -105,8 +105,6 @@ input[type="date"] {
     color: var(--color-muted);
     background: var(--color-input-bg);
     transition: all 0.2s ease;
-    -webkit-appearance: none;
-    appearance: none;
 }
 
 input[type="date"]:focus {
