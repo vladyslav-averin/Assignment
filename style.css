@@ -118,7 +118,7 @@ input[type="date"] {
 input[type="date"]:focus {
     outline: none;
     border-color: var(--color-muted);
-    background: var(--color-white);
+    background-color: var(--color-white);
 }
 
 select {
