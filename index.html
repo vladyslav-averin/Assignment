@@ -23,6 +23,10 @@
                 name="fullname"
                 placeholder="e. g. John Doe"
                 autocomplete="name"
+                required
+                minlength="3"
+                pattern="^[A-Za-zА-Яа-яЁёÀ-ÿ]+(?:[-'\s][A-Za-zА-Яа-яЁёÀ-ÿ]+)+$"
+                title="Please enter your full name (first and last name with letters only)"
             >
         </div>
 
@@ -138,7 +142,6 @@
         <div class="form-group">
             <label for="sociability">How social are you?</label>
             <div class="range-container">
-                <span class="range-label">Introvert</span>
                 <div class="range-wrapper">
                     <input 
                         type="range" 
@@ -156,7 +159,6 @@
                         <span>5</span>
                     </div>
                 </div>
-                <span class="range-label">Extrovert</span>
             </div>
         </div>
 

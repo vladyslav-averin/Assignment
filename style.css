@@ -38,6 +38,7 @@ h1 {
 .subtitle {
     color: #666;
     font-weight: 400;
+    font-size: 1.12rem;
 }
 
 .form-group {
@@ -136,7 +137,7 @@ select:focus {
 .group-label {
     display: block;
     color: #000;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     font-weight: 400;
 }
 
@@ -208,12 +209,6 @@ select:focus {
     margin-top: 0.5rem;
 }
 
-.range-label {
-    color: #000;
-    white-space: nowrap;
-    padding-top: 0.3125rem; /* выравнивание с центром слайдера */
-}
-
 .range-wrapper {
     flex: 1;
     display: flex;
@@ -243,16 +238,15 @@ input[type="range"] {
 
 .range-values span {
     position: absolute;
-    font-size: 0.75rem;
     color: #999;
     transform: translateX(-50%);
 }
 
-.range-values span:nth-child(1) { left: 0%; }
+.range-values span:nth-child(1) { left: 2%; }
 .range-values span:nth-child(2) { left: 26%; }
 .range-values span:nth-child(3) { left: 50%; }
 .range-values span:nth-child(4) { left: 74%; }
-.range-values span:nth-child(5) { left: 100%; }
+.range-values span:nth-child(5) { left: 98%; }
 
 /* Textarea */
 textarea {

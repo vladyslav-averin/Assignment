@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIA Connect - Create Account</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: white;
+            padding: 0;
+            color: #000;
+            line-height: 1.5;
+            min-height: 100vh;
+            font-size: 1rem;
+        }
+
+        .container {
+            max-width: 100%;
+            margin: 0 auto;
+            background: white;
+            padding: 1.5rem 3rem;
+            border-radius: 0;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.03em;
+        }
+
+        .subtitle {
+            color: #666;
+            font-weight: 400;
+            font-size: 1.12rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        label {
+            display: block;
+            color: #000;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="password"] {
+            width: 100%;
+            min-height: 2.5rem;
+            padding: 0.625rem 0.7rem;
+            border: 1px solid #d0d0d0;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-family: inherit;
+            color: #555;
+            background: #f9f9f9;
+            transition: all 0.2s ease;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        input::placeholder {
+            color: #c0c0c0;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #b0b0b0;
+            background: #ffffff;
+        }
+
+        .hint {
+            display: block;
+            font-size: 0.875rem;
+            color: #999;
+            margin-top: 0.5rem;
+            line-height: 1.4;
+            font-weight: 300;
+        }
+
+        input[type="date"] {
+            width: 100%;
+            min-height: 2.5rem;
+            padding: 0.625rem .7rem;
+            border: 1px solid #d0d0d0;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-family: inherit;
+            color: #c0c0c0;
+            background: #f9f9f9;
+            transition: all 0.2s ease;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        input[type="date"]:focus {
+            outline: none;
+            border-color: #b0b0b0;
+            background: #ffffff;
+        }
+
+        select {
+            width: auto;
+            min-height: 2.5rem;
+            padding: 0.625rem 2rem 0.625rem .7rem;
+            border: 1px solid #d0d0d0;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-family: inherit;
+            color: #c0c0c0;
+            background: #f9f9f9;
+            background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M1 1.5L6 6.5L11 1.5" stroke="%23999" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/%3E%3C/svg%3E');
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            cursor: pointer;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #b0b0b0;
+            background-color: #ffffff;
+        }
+
+        .group-label {
+            display: block;
+            color: #000;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        .optional {
+            color: #999;
+            font-weight: 300;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .radio-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            color: #000;
+            font-weight: 400;
+        }
+
+        .radio-label input[type="radio"] {
+            width: 1.25rem;
+            height: 1.25rem;
+            margin: 0;
+            cursor: pointer;
+            accent-color: #000;
+        }
+
+        .radio-label span {
+            line-height: 1;
+        }
+
+        /* Стили для поля ввода другого кампуса */
+        .other-campus-input {
+            display: none;
+            margin-top: 0.75rem;
+            animation: slideDown 0.3s ease;
+        }
+
+        .other-campus-input.visible {
+            display: block;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .checkbox-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            color: #000;
+            font-weight: 400;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            width: 1.125rem;
+            height: 1.125rem;
+            margin: 0;
+            cursor: pointer;
+            accent-color: #000;
+            border-radius: 0.25rem;
+        }
+
+        .checkbox-label span {
+            line-height: 1;
+        }
+
+        .range-container {
+            display: flex;
+            align-items: flex-start;
+            gap: .875rem;
+            margin-top: 0.5rem;
+        }
+
+        .range-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            height: 0.25rem;
+            -webkit-appearance: none;
+            appearance: none;
+            background: #d0d0d0;
+            border-radius: 0.125rem;
+            outline: none;
+            cursor: pointer;
+            margin-top: 0.4375rem;
+            accent-color: #000;
+        }
+
+        .range-values {
+            display: flex;
+            position: relative;
+            margin-top: 0.5rem;
+            height: 1rem;
+        }
+
+        .range-values span {
+            position: absolute;
+            color: #999;
+            transform: translateX(-50%);
+        }
+
+        .range-values span:nth-child(1) { left: 2%; }
+        .range-values span:nth-child(2) { left: 26%; }
+        .range-values span:nth-child(3) { left: 50%; }
+        .range-values span:nth-child(4) { left: 74%; }
+        .range-values span:nth-child(5) { left: 98%; }
+
+        textarea {
+            width: 100%;
+            min-height: 7.5rem;
+            padding: 0.75rem .7rem;
+            border: 1px solid #d0d0d0;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-family: inherit;
+            color: #555;
+            background: #f9f9f9;
+            resize: vertical;
+            transition: all 0.2s ease;
+        }
+
+        textarea::placeholder {
+            color: #c0c0c0;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #b0b0b0;
+            background: #ffffff;
+        }
+
+        input[type="file"] {
+            width: 100%;
+            font-size: 0.875rem;
+            font-family: inherit;
+            color: #000;
+            cursor: pointer;
+            pointer-events: none; 
+        }
+
+        input[type="file"]:focus {
+            outline: none;
+            border-color: #b0b0b0;
+        }
+
+        input[type="file"]::file-selector-button {
+            padding: 0.5rem 1rem;
+            margin-right: 1rem;
+            background: white;
+            border: 1px solid #d0d0d0;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            font-weight: 400;
+            color: #000;
+            cursor: pointer;
+            pointer-events: auto;
+        }
+
+        .terms-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.625rem;
+            margin-bottom: 0;
+        }
+
+        .terms-checkbox input[type="checkbox"] {
+            width: 1.125rem;
+            height: 1.125rem;
+            margin: 0.125rem 0 0 0;
+            cursor: pointer;
+            accent-color: #000;
+            flex-shrink: 0;
+        }
+
+        .terms-checkbox span {
+            color: #000;
+            line-height: 1.4;
+        }
+
+        .terms-link {
+            color: #999;
+            text-decoration: none;
+        }
+
+        .submit-btn {
+            width: 100%;
+            min-height: 3.25rem;
+            padding: 1rem;
+            background: #000;
+            color: white;
+            border: none;
+            border-radius: 0.625rem;
+            font-size: 1rem;
+            font-weight: 400;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-top: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            background: #1a1a1a;
+        }
+
+        .submit-btn:active {
+            transform: scale(0.98);
+        }
+
+        @media (min-width: 48em) {
+            body {
+                background-color: #ececec;
+                padding: 2rem 2rem;
+            }
+
+            .container {
+                max-width: 37.5rem;
+                padding: 3rem 2.5rem;
+                border-radius: 1.25rem;
+                box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            }
+
+            header {
+                margin-bottom: 1rem;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.0625rem;
+            }
+
+            .form-group {
+                margin-bottom: 1.5rem;
+            }
+
+            label {
+                font-size: 1rem;
+                margin-bottom: 0.5rem;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"],
+            input[type="password"] {
+                min-height: 2.5rem;
+                padding: 0.625rem 1rem;
+                font-size: 1rem;
+                border-radius: 0.5rem;
+            }
+
+            .hint {
+                font-size: 0.8rem;
+                margin-top: 0.5rem;
+            }
+
+            input[type="date"],
+            select {
+                min-height: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Join VIA Connect</h1>
+            <p class="subtitle">Let's create your student profile</p>
+        </header>
+
+        <div class="form-group">
+            <label for="fullname">Full name</label>
+            <input 
+                type="text" 
+                id="fullname" 
+                name="fullname"
+                placeholder="e. g. John Doe"
+                autocomplete="name"
+                required
+                minlength="3"
+                pattern="^[A-Za-zÀ-ÿА-Яа-яЁё]+(?:[-'\s][A-Za-zÀ-ÿА-Яа-яЁё]+)+$"
+                title="Please enter your full name (first and last name with letters only)"
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="email">VIA Email</label>
+            <input 
+                type="email" 
+                id="email" 
+                name="email"
+                placeholder="e. g. 363116@via.dk"
+                autocomplete="email"
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input 
+                type="tel" 
+                id="phone" 
+                name="phone"
+                placeholder="+45 53 68 41 21"
+                autocomplete="tel"
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input 
+                type="password" 
+                id="password" 
+                name="password"
+                placeholder="Enter your password"
+                autocomplete="new-password"
+            >
+            <span class="hint">At least 8 characters, 1 uppercase, 1 lowercase, 1 number.</span>
+        </div>
+
+        <div class="form-group">
+            <label for="confirm">Confirm password</label>
+            <input 
+                type="password" 
+                id="confirm" 
+                name="confirm-password"
+                placeholder="Re-enter your password"
+                autocomplete="new-password"
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input 
+                type="date" 
+                id="dob" 
+                name="dob"
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="program">Study Program</label>
+            <select id="program" name="program">
+                <option value="" selected>Select</option>
+                <option value="software-engineering">Software Technology Engineering</option>
+                <option value="design">Graphic Storytelling</option>
+                <option value="marketing">Character Animation</option>
+            </select>
+        </div>
+
+        <div class="form-group campus-group">
+            <label class="group-label">Campus Location</label>
+            <div class="radio-group">
+                <label class="radio-label">
+                    <input type="radio" name="campus" value="horsens" id="campus-horsens" checked>
+                    <span>Horsens</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="campus" value="aarhus" id="campus-aarhus">
+                    <span>Aarhus</span>
+                </label>
+                <label class="radio-label">
+                    <input type="radio" name="campus" value="other" id="campus-other">
+                    <span>Other</span>
+                </label>
+            </div>
+            <input 
+                type="text" 
+                id="other-campus" 
+                name="other-campus"
+                class="other-campus-input"
+                placeholder="Enter your campus location"
+            >
+        </div>
+
+        <div class="form-group">
+            <label class="group-label">Activity Interests <span class="optional">(select all that apply)</span></label>
+            <div class="checkbox-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" name="interests" value="sports">
+                    <span>Sports</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="interests" value="travel">
+                    <span>Travel</span>
+                </label>
+                <label class="checkbox-label">
+                    <input type="checkbox" name="interests" value="other">
+                    <span>Other</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="sociability">How social are you?</label>
+            <div class="range-container">
+                <div class="range-wrapper">
+                    <input 
+                        type="range" 
+                        id="sociability" 
+                        name="sociability"
+                        min="1" 
+                        max="5" 
+                        value="3"
+                    >
+                    <div class="range-values">
+                        <span>1</span>
+                        <span>2</span>
+                        <span>3</span>
+                        <span>4</span>
+                        <span>5</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="bio">Short Bio <span class="optional">(optional)</span></label>
+            <textarea 
+                id="bio" 
+                name="bio"
+                placeholder="Tell us about yourself..."
+                maxlength="300"
+            ></textarea>
+            <span class="hint">Maximum 300 characters</span>
+        </div>
+
+        <div class="form-group">
+            <label for="photo">Upload photo <span class="optional">(optional)</span></label>
+            <input 
+                type="file" 
+                id="photo" 
+                name="photo"
+                accept="image/jpeg,image/png,image/heic"
+            >
+            <span class="hint">JPG, PNG, HEIC (max 5 mb)</span>
+        </div>
+
+        <div class="form-group">
+            <label class="checkbox-label terms-checkbox">
+                <input type="checkbox" id="terms" name="terms">
+                <span>I agree to the <a href="#" class="terms-link">Terms & Conditions</a></span>
+            </label>
+        </div>
+
+        <button type="submit" class="submit-btn">Create Account</button>
+    </div>
+</body>
+</html>
